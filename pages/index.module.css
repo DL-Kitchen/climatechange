@@ -39,14 +39,17 @@
 .main form {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 620px;
 }
 .main input[type="text"] {
   padding: 12px 16px;
   border: 1px solid #10a37f;
   border-radius: 4px;
   margin-bottom: 24px;
+  height: 350px;
+  overflow-wrap: break-word;
 }
+
 .main ::placeholder {
   color: #8e8ea0;
   opacity: 1;
@@ -63,4 +66,6 @@
 .main .result {
   font-weight: bold;
   margin-top: 40px;
+  margin-right: 340px;
+  margin-left: 340px;
 }

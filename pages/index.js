@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [animalInput, setAnimalInput] = useState("");
+  const [routineInput, setRoutineInput] = useState("");
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -13,32 +13,34 @@ export default function Home() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ animal: animalInput }),
+      body: JSON.stringify({ routine: routineInput }),
     });
     const data = await response.json();
     setResult(data.result);
-    setAnimalInput("");
+    setRoutineInput("");
   }
 
   return (
     <div>
       <Head>
         <title>OpenAI Quickstart</title>
-        <link rel="icon" href="/dog.png" />
+        <link rel="icon" href="/logo.png" />
       </Head>
 
       <main className={styles.main}>
-        <img src="/dog.png" className={styles.icon} />
-        <h3>Name my pet</h3>
+        <img src="/logo.png" className={styles.icon} />
+        <h3>My life after climate change</h3>
         <form onSubmit={onSubmit}>
-          <input
+          <textarea
             type="text"
-            name="animal"
-            placeholder="Enter an animal"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
+            rows="10"
+            cols="50"
+            name="routine"
+            placeholder="Enter your daily routine"
+            value={routineInput}
+            onChange={(e) => setRoutineInput(e.target.value)}
           />
-          <input type="submit" value="Generate names" />
+          <input type="submit" value="Climate Change" />
         </form>
         <div className={styles.result}>{result}</div>
       </main>
