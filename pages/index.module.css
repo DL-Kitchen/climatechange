@@ -51,7 +51,7 @@
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 66%;
   margin:auto;
   font-weight: bolder;
 }
@@ -72,18 +72,25 @@
 }
 
 .questionText {
-  padding:0;
+  font-size: large;
+  padding:10px;
   width:100%;
   resize: none;
   margin-bottom: 20px;
   margin-top: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 5px 10px #f1eded;
+  background-color:rgb(253, 254, 255);
 }
 
 .inputLabel {
   background-color: #10a37f;
-  padding: 5px 5px;
+  padding: 8px 6px;
   color: #fff;
   font-weight: bold;
+  box-shadow: 5px 10px #f6f4f4;
+  padding-right: 12px;
 }
 
 .header {
@@ -97,6 +104,7 @@
 }
 
 .fader {
+  color:#10a37f;
   -webkit-animation: fadeinout 3s linear forwards;
   animation: fadeinout 3s linear forwards;
   animation-iteration-count: infinite;
