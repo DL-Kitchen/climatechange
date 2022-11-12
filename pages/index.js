@@ -45,7 +45,7 @@ export default function Home() {
         <div className={styles.inputForm} style={{display: isLoading || result ? "none" : "initial"}}>
         <form onSubmit={onSubmit}>
 
-          <label htmlFor="morning" className={styles.inputLabel}>What are the first things you do when you wake up?</label>
+          <label htmlFor="morning" className={styles.inputLabel}>Describe the first things you do when you wake up</label>
           <textarea
             className={styles.questionText}
             type="text"
@@ -58,7 +58,7 @@ export default function Home() {
             onChange={(e) => setMorningRoutineInput(e.target.value)}
           />
 
-          <label htmlFor="commute" className={styles.inputLabel}>How do you get to work/school?</label>
+          <label htmlFor="commute" className={styles.inputLabel}>Describe how you get to work/school</label>
           <textarea
             className={styles.questionText}
             type="text"
@@ -71,7 +71,7 @@ export default function Home() {
             onChange={(e) => setCommuteRoutineInput(e.target.value)}
           />
 
-          <label htmlFor="friends" className={styles.inputLabel}>What is your favourite activity you like to do with friends?</label>
+          <label htmlFor="friends" className={styles.inputLabel}>Describe your favourite activity you like to do with friends</label>
           <textarea
             className={styles.questionText}
             type="text"

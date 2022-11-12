@@ -6,18 +6,21 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
+
   const completion = await openai.createCompletion({
     model: "text-davinci-002",
-    prompt: generatePrompt(req.body.morning),
+    prompt: generatePrompt(req.body.morning, req.body.commute, req.body.friends),
     temperature: 0.6,
     max_tokens:400,
     temperature:0.5,
   });
-  res.status(200).json({ result: completion.data.choices[0].text });
+
+  // Can process this later to remove the 1., 2., etc
+  const rawText = completion.data.choices[0].text;
+
+  res.status(200).json({ result: rawText });
 }
 
-function generatePrompt(routine) {
-  const capitalizedRoutine =
-    routine[0].toUpperCase() + routine.slice(1).toLowerCase();
-  return `Rewrite this paragraph after the temperature raises 3 degrees celsius as a grave consequence of climate change: ` + capitalizedRoutine;
+function generatePrompt(morning, commute, friends) {
+  return `Rewrite the following paragraphs after the temperature raises 3 degrees celsius as a grave consequence of climate change:\n\n1.${morning}\n\n2.${commute}\n\n3.${friends}`;
 }
