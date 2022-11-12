@@ -3,7 +3,10 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [routineInput, setRoutineInput] = useState("");
+  const [morningRoutineInput, setMorningRoutineInput] = useState("");
+  const [friendsRoutineInput, setFriendsRoutineInput] = useState("");
+  const [commuteRoutineInput, setCommuteRoutineInput] = useState("");
+
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -13,36 +16,75 @@ export default function Home() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ routine: routineInput }),
+      body: JSON.stringify({ morning: morningRoutineInput, friends: friendsRoutineInput, commute:commuteRoutineInput }),
     });
     const data = await response.json();
     setResult(data.result);
-    setRoutineInput("");
+    setMorningRoutineInput("");
+    setCommuteRoutineInput("");
+    setFriendsRoutineInput("");
   }
 
   return (
     <div>
       <Head>
-        <title>OpenAI Quickstart</title>
+        <title>My Life After Climate Change</title>
         <link rel="icon" href="/logo.png" />
       </Head>
 
       <main className={styles.main}>
-        <img src="/logo.png" className={styles.icon} />
-        <h3>My life after climate change</h3>
+        <div className={styles.header}>
+          <h3>My Life After Climate Change</h3>
+          <p>Have you ever wondered how your daily routine would be altered by climate change?</p>
+          <p>Answer a few questions below, hit the Climate Change button, and find out.</p>
+        </div>
+
+        <div className={styles.inputForm}>
         <form onSubmit={onSubmit}>
+
+          <label htmlFor="morning">What are the first things you do when you wake up?</label>
           <textarea
+            className={styles.questionText}
             type="text"
             rows="10"
             cols="50"
-            name="routine"
-            placeholder="Enter your daily routine"
-            value={routineInput}
-            onChange={(e) => setRoutineInput(e.target.value)}
+            name="morning"
+            placeholder="I get out of bed, brush my teeth, and read the latest articles on climate change!"
+            value={morningRoutineInput}
+            onChange={(e) => setMorningRoutineInput(e.target.value)}
           />
+
+          <label htmlFor="commute">How do you get to work/school?</label>
+          <textarea
+            className={styles.questionText}
+            type="text"
+            rows="10"
+            cols="50"
+            name="commute"
+            placeholder="I usually ride my bike to work across town to work at the OpenAI Factory."
+            value={commuteRoutineInput}
+            onChange={(e) => setCommuteRoutineInput(e.target.value)}
+          />
+
+          <label htmlFor="friends">What is your favourite activity you like to do with friends?</label>
+          <textarea
+            className={styles.questionText}
+            type="text"
+            rows="10"
+            cols="50"
+            name="friends"
+            placeholder="My friends and I like to go ice skating at the local pond."
+            value={friendsRoutineInput}
+            onChange={(e) => setFriendsRoutineInput(e.target.value)}
+          />
+
           <input type="submit" value="Climate Change" />
         </form>
+
+        </div>
+
         <div className={styles.result}>{result}</div>
+
       </main>
     </div>
   );

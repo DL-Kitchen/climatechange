@@ -8,7 +8,7 @@ const openai = new OpenAIApi(configuration);
 export default async function (req, res) {
   const completion = await openai.createCompletion({
     model: "text-davinci-002",
-    prompt: generatePrompt(req.body.routine),
+    prompt: generatePrompt(req.body.morning),
     temperature: 0.6,
     max_tokens:400,
     temperature:0.5,
@@ -19,5 +19,5 @@ export default async function (req, res) {
 function generatePrompt(routine) {
   const capitalizedRoutine =
     routine[0].toUpperCase() + routine.slice(1).toLowerCase();
-  return `How my daily activities may change if the temperature raises 3 celsius grades as a consequence of climate change? Tell 10 predictions and recommendations.`;
+  return `Rewrite this paragraph after the temperature raises 3 degrees celsius as a grave consequence of climate change: ` + capitalizedRoutine;
 }
