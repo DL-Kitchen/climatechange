@@ -18,7 +18,13 @@ export default async function (req, res) {
   // Can process this later to remove the 1., 2., etc
   const rawText = completion.data.choices[0].text;
 
-  res.status(200).json({ result: rawText });
+  const q1 = rawText.split("1.")[1].split("2.")[0];
+  const q2 = rawText.split("2.")[1].split("3.")[0];
+  const q3 = rawText.split("3.")[1].split("4.")[0];
+
+  const finalText = q1 + "\n" + q2 + "\n" + q3;
+
+  res.status(200).json({result:{ q1:q1, q2:q2, q3:q3 }});
 }
 
 function generatePrompt(morning, commute, friends) {

@@ -22,9 +22,6 @@ export default function Home() {
     const data = await response.json();
     setLoading(false);
     setResult(data.result);
-    setMorningRoutineInput("");
-    setCommuteRoutineInput("");
-    setFriendsRoutineInput("");
   }
 
   return (
@@ -94,7 +91,22 @@ export default function Home() {
           <h2 className={styles.fader}>Loading...</h2>
         </div>
 
-        <div className={styles.result}>{result}</div>
+        <div className={styles.result} style={{display: result ? "initial" : "none"}}>
+          <div>
+            <p style={{fontWeight:"lighter"}}>{morningRoutineInput} becomes...</p>
+            <p>{result?.q1}</p>
+          </div>
+
+          <div>
+            <p style={{fontWeight:"lighter"}}>{commuteRoutineInput} becomes...</p>
+            <p>{result?.q2}</p>
+          </div>
+
+          <div>
+            <p style={{fontWeight:"lighter"}}>{friendsRoutineInput} becomes...</p>
+            <p>{result?.q3}</p>
+          </div>
+        </div>
 
       </main>
     </div>
