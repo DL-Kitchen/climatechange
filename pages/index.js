@@ -6,11 +6,12 @@ export default function Home() {
   const [morningRoutineInput, setMorningRoutineInput] = useState("");
   const [friendsRoutineInput, setFriendsRoutineInput] = useState("");
   const [commuteRoutineInput, setCommuteRoutineInput] = useState("");
-
+  const [isLoading, setLoading] = useState("");
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
     event.preventDefault();
+    setLoading(true);
     const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
@@ -19,6 +20,7 @@ export default function Home() {
       body: JSON.stringify({ morning: morningRoutineInput, friends: friendsRoutineInput, commute:commuteRoutineInput }),
     });
     const data = await response.json();
+    setLoading(false);
     setResult(data.result);
     setMorningRoutineInput("");
     setCommuteRoutineInput("");
@@ -39,7 +41,7 @@ export default function Home() {
           <p>Answer a few questions below, hit the Climate Change button, and find out.</p>
         </div>
 
-        <div className={styles.inputForm}>
+        <div className={styles.inputForm} style={{display: isLoading || result ? "none" : "initial"}}>
         <form onSubmit={onSubmit}>
 
           <label htmlFor="morning">What are the first things you do when you wake up?</label>
@@ -80,7 +82,9 @@ export default function Home() {
 
           <input type="submit" value="Climate Change" />
         </form>
-
+        </div>
+        <div style={{display: !isLoading || result ? "none" : "initial"}}>
+          Loading...
         </div>
 
         <div className={styles.result}>{result}</div>
