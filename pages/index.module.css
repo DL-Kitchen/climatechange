@@ -13,6 +13,7 @@
   font-weight: bold;
   font-style: normal;
 }
+
 .main,
 .main input {
   font-size: 16px;
@@ -20,6 +21,7 @@
   color: #353740;
   font-family: "ColfaxAI", Helvetica, sans-serif;
 }
+
 .main {
   display: flex;
   flex-direction: column;
@@ -36,19 +38,6 @@
   color: #202123;
   margin: 16px 0 40px;
 }
-.main form {
-  display: flex;
-  flex-direction: column;
-  width: 620px;
-}
-.main input[type="text"] {
-  padding: 12px 16px;
-  border: 1px solid #10a37f;
-  border-radius: 4px;
-  margin-bottom: 24px;
-  height: 350px;
-  overflow-wrap: break-word;
-}
 
 .main ::placeholder {
   color: #8e8ea0;
@@ -62,10 +51,32 @@
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
+  width: 100%;
+  margin:auto;
 }
 .main .result {
   font-weight: bold;
   margin-top: 40px;
   margin-right: 340px;
   margin-left: 340px;
+}
+
+.question {
+  width: 100%;
+}
+
+.questionText {
+  padding:0;
+  width:100%;
+  resize: none;
+}
+
+.header {
+  width:50%;
+  margin: auto;
+}
+
+.inputForm {
+  width:50%;
+  flex: auto;
 }
