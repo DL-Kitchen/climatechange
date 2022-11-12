@@ -11,7 +11,7 @@ export default async function (req, res) {
     model: "text-davinci-002",
     prompt: generatePrompt(req.body.morning, req.body.commute, req.body.friends),
     temperature: 0.6,
-    max_tokens:400,
+    max_tokens:1200,
     temperature:0.5,
   });
 
