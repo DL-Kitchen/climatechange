@@ -33,7 +33,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.header}>
-          <h3>My Life After <span style={{color:"#10a37f"}}>Climate Change</span> 🌎</h3>
+          <h3 style={{lineHeight:1}}>My Life After <span style={{color:"#10a37f"}}>Climate Change</span> 🌎</h3>
           <p>Have you ever wondered how your daily routine would be altered by climate change?</p>
           <p>Answer a few questions below, hit the Climate Change button, and find out.</p>
           <br></br>

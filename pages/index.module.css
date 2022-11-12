@@ -32,7 +32,7 @@
   width: 34px;
 }
 .main h3 {
-  font-size: 32px;
+  font-size: 48px;
   line-height: 40px;
   font-weight: bold;
   color: #202123;
@@ -54,6 +54,7 @@
   width: 66%;
   margin:auto;
   font-weight: bolder;
+  margin-bottom: 15px;
 }
 
 .main input[type="submit"]:hover {
@@ -91,11 +92,23 @@
   font-weight: bold;
   box-shadow: 5px 10px #f6f4f4;
   padding-right: 12px;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+  .inputLabel {
+    font-size: x-small;
+  }
+
+  .result {
+    width:66%;
+  }
 }
 
 .header {
   width:66%;
   margin: auto;
+  font-size: larger;
 }
 
 .inputForm {
