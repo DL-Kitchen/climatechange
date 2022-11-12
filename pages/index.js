@@ -36,15 +36,16 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.header}>
-          <h3>My Life After Climate Change</h3>
+          <h3>My Life After <span style={{color:"#10a37f"}}>Climate Change</span> 🌎</h3>
           <p>Have you ever wondered how your daily routine would be altered by climate change?</p>
           <p>Answer a few questions below, hit the Climate Change button, and find out.</p>
+          <br></br>
         </div>
 
         <div className={styles.inputForm} style={{display: isLoading || result ? "none" : "initial"}}>
         <form onSubmit={onSubmit}>
 
-          <label htmlFor="morning">What are the first things you do when you wake up?</label>
+          <label htmlFor="morning" className={styles.inputLabel}>What are the first things you do when you wake up?</label>
           <textarea
             className={styles.questionText}
             type="text"
@@ -56,7 +57,7 @@ export default function Home() {
             onChange={(e) => setMorningRoutineInput(e.target.value)}
           />
 
-          <label htmlFor="commute">How do you get to work/school?</label>
+          <label htmlFor="commute" className={styles.inputLabel}>How do you get to work/school?</label>
           <textarea
             className={styles.questionText}
             type="text"
@@ -68,7 +69,7 @@ export default function Home() {
             onChange={(e) => setCommuteRoutineInput(e.target.value)}
           />
 
-          <label htmlFor="friends">What is your favourite activity you like to do with friends?</label>
+          <label htmlFor="friends" className={styles.inputLabel}>What is your favourite activity you like to do with friends?</label>
           <textarea
             className={styles.questionText}
             type="text"
@@ -84,7 +85,7 @@ export default function Home() {
         </form>
         </div>
         <div style={{display: !isLoading || result ? "none" : "initial"}}>
-          Loading...
+          <h2 className={styles.fader}>Loading...</h2>
         </div>
 
         <div className={styles.result}>{result}</div>
