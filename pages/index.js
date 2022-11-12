@@ -51,7 +51,7 @@ export default function Home() {
             type="text"
             rows="6"
             cols="50"
-            maxlength="500"
+            maxLength="500"
             name="morning"
             placeholder="I get out of bed, brush my teeth, and read the latest articles on climate change!"
             value={morningRoutineInput}
@@ -64,7 +64,7 @@ export default function Home() {
             type="text"
             rows="6"
             cols="50"
-            maxlength="500"
+            maxLength="500"
             name="commute"
             placeholder="I usually ride my bike to work across town to work at the OpenAI Factory."
             value={commuteRoutineInput}
@@ -77,7 +77,7 @@ export default function Home() {
             type="text"
             rows="6"
             cols="50"
-            maxlength="500"
+            maxLength="500"
             name="friends"
             placeholder="My friends and I like to go ice skating at the local pond."
             value={friendsRoutineInput}
