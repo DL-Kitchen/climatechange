@@ -27,5 +27,5 @@ export default async function (req, res) {
 }
 
 function generatePrompt(morning, commute, friends) {
-  return `Rewrite the following paragraphs after the temperature raises 3 degrees celsius as a grave consequence of climate change:\n\n1.${morning}\n\n2.${commute}\n\n3.${friends}`;
+  return `Rewrite and expand the following paragraphs after the temperature raises 3 degrees celsius as a grave consequence of climate change:\n\n1.${morning}\n\n2.${commute}\n\n3.${friends}`;
 }
