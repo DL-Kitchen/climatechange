@@ -10,9 +10,8 @@ export default async function (req, res) {
   const completion = await openai.createCompletion({
     model: "text-davinci-002",
     prompt: generatePrompt(req.body.morning, req.body.commute, req.body.friends),
-    temperature: 0.6,
+    temperature: 1.0,
     max_tokens:1200,
-    temperature:0.5,
   });
 
   // Can process this later to remove the 1., 2., etc
