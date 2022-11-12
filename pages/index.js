@@ -106,6 +106,10 @@ export default function Home() {
             <p style={{fontWeight:"lighter"}}>{friendsRoutineInput} becomes...</p>
             <p>{result?.q3}</p>
           </div>
+
+          <div style={{display:"flex"}}>
+            <a style={{margin:"auto", color:"#10a37f", marginTop:"10px"}} href="./">Try Again</a>
+          </div>
         </div>
 
       </main>
