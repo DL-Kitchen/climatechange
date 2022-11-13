@@ -3,12 +3,14 @@ import { Configuration, OpenAIApi } from "openai";
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
+const openai1 = new OpenAIApi(configuration);
+
+const openai2 = new OpenAIApi(configuration);
 
 export default async function (req, res) {
 
   // First OpenAI API request related to how your daily routine would be altered by climate change
-  const completion = await openai.createCompletion({
+  const completion = await openai1.createCompletion({
     model: "text-davinci-002",
     prompt: generatePrompt(req.body.morning, req.body.commute, req.body.friends),
     temperature: 1.0,
@@ -25,7 +27,7 @@ export default async function (req, res) {
   const finalText = q1 + "\n" + q2 + "\n" + q3;
 
   // Second OpenAI API request related to sustainable products
-  const products = await openai.createCompletion({
+  const products = await openai2.createCompletion({
     model: "text-davinci-002",
     prompt: generatePrompt2(req.body.morning, req.body.commute, req.body.friends),
     temperature: 0.0,
@@ -34,13 +36,13 @@ export default async function (req, res) {
 
   const rawText2 = products.data.choices[0].text;
 
-  res.status(200).json({result:{ q1:q1, q2:q2, q3:q3 , q4:rawText2 }});
+  res.status(200).json({result:{ q1:q1, q2:q2, q3:q3 , q4:rawText2}});
 
 }
 
 // Function related to how your daily routine would be altered by climate change
 function generatePrompt(morning, commute, friends) {
-  return `Rewrite and expand the following paragraphs after the temperature raises 3 degrees celsius as a grave consequence of climate change:\n\n1.${morning}\n\n2.${commute}\n\n3.${friends}`;
+  return `Rewrite and expand the following paragraphs after the temperature raises as a grave consequence of climate change and global warming:\n\n1.${morning}\n\n2.${commute}\n\n3.${friends}`;
 }
 
 // Function related to sustainable products
@@ -83,3 +85,5 @@ For you activites with friends, consider using this product: New Belgium Brewing
 3.${friends}\n\n
   `;
 }
+
+
