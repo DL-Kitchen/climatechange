@@ -46,7 +46,54 @@ export default async function (req, res) {
 
 // Function related to how your daily routine would be altered by climate change
 function generatePrompt(morning, commute, friends) {
-  return `Rewrite and expand the following paragraphs after the temperature raises as a grave consequence of climate change and global warming:\n\n1.${morning}\n\n2.${commute}\n\n3.${friends}`;
+  return `Rewrite and expand the following paragraphs after the temperature raises as a grave consequence of climate change and global warming:
+
+  1. First thing I do in the morning is some yoga. 
+
+  2. I go to the school riding my bicyle. 
+  
+  3. I like to play videogames with friends. 
+
+
+  With the temperature rising as a result of climate change, the first thing I do in the morning is some yoga to try and stay calm.
+
+  I go to school riding my bicycle, trying to do my part to reduce emissions.
+  
+  I like to play videogames with friends, but it's hard to enjoy myself when I know the world is in such dire straits.
+
+	
+	1. The first thing I do in the morning is brushing my teeth. becomes...
+
+	2. I go to the school riding my skateboard. becomes...
+
+	3. I like to play video games with friends. becomes...
+
+
+	The first thing I do in the morning is brush my teeth, but lately the water has been too hot to use. This is just one of the many ways that climate change is affecting our everyday lives.
+
+	I go to the school riding my skateboard, but the heat has been so unbearable that I can't stand to be outside for more than a few minutes.
+
+	I like to play video games with friends, but it's hard to concentrate when the electricity keeps going out because of the heat waves.
+
+
+	1. I get out of bed, brush my teeth, and read the latest articles on climate change.
+
+	2. I usually ride my bike to work across town to work at the OpenAI Factory. 
+
+	3. My friends and I like to go ice skating at the local pond. 
+
+
+	I get out of bed, brush my teeth, and read the latest articles on climate change. The temperature rise as a grave consequence of climate change and global warming is something that is on my mind a lot lately. I try to do my part by recycling and riding my bike to work, but it feels like there is so much more that needs to be done.
+
+	I usually ride my bike to work across town to work at the OpenAI Factory. With the rising temperatures, it is becoming harder and harder to bike to work. I am lucky that my job is only a few miles away, but I know that there are many people who are not as lucky.
+
+	My friends and I like to go ice skating at the local pond. With the rising temperatures, the pond has not been frozen over for the past few winters. We have had to find other ways to entertain ourselves.
+  
+  1.${morning}
+  
+  2.${commute}
+  
+  3.${friends}`;
 }
 
 // Function related to sustainable products
