@@ -28,7 +28,7 @@ export default async function (req, res) {
   const products = await openai.createCompletion({
     model: "text-davinci-002",
     prompt: generatePrompt2(req.body.morning, req.body.commute, req.body.friends),
-    temperature: 1.0,
+    temperature: 0.1,
     max_tokens:1200,
   });
 
@@ -45,9 +45,38 @@ function generatePrompt(morning, commute, friends) {
 
 // Function related to sustainable products
 function generatePrompt2(morning, commute, friends) {
-  return `Recommend a brand and model of a sustainable product that may be used during each of the following folowing activities:
-  \n\n1.${morning}\n\n2.${commute}\n\n3.${friends}
-  Confirm if the brand and model is carbon neutral or not and explain how it avoids climate change. 
-  Which are its unique climate protection features and which are its general sustainable features?
+  return `Identify the category for each of the following activities and suggest a brand and model of a sustainable product for that category.
+  Recommend a brand and model of a sustainable product that can be used during that activity.
+  Only suggest brands and models that are carbon neutral.
+
+1. I get out of bed, brush my teeth, and read the latest articles on climate change
+
+2. I go to my job by car.
+
+3. I like to participate in OpenAI hackathons with friends.
+
+For your morning activities consider using this product: Dr Best Greenclean toothbrush. 
+
+For your work/school activities consider using this product: Tesla Model S.
+
+For you activites with friends, consider using this product:The MacBook Air is a carbon neutral computer.
+
+1. The first thing I do in the morning is to select the clothes I will use, then I dress up.
+
+2. I go to my walking, I use confortable running shoes.
+
+3. I like to drink a beer with friends.
+
+For your morning activities consider using this product: Clothing company, Patagonia, is always on the top of eco-friendly.
+
+For your work/school activities consider using this product: Allbirds running shoes, Allbirds is already a 100% carbon neutral business.
+
+For you activites with friends, consider using this product: New Belgium Brewing Company is the fourth-largest craft brewery in the US and has been committed to being eco-friendly since its founding in 1991.
+
+1.${morning}\n\n
+
+2.${commute}\n\n
+
+3.${friends}\n\n
   `;
 }

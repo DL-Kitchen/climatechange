@@ -109,7 +109,7 @@ export default function Home() {
 
           <div>
             <br></br>
-            <p style={{fontWeight:"lighter"}}>It doesn't have to be like this... consider using these products:</p>
+            <p style={{fontWeight:"lighter"}}>It doesn't have to be like this... if in the future you need to replace the products you use during these activities then consider selecting these sustainable products instead:</p>
             <p>{result?.q4}</p>
           </div>
 
