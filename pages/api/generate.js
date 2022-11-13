@@ -36,7 +36,11 @@ export default async function (req, res) {
 
   const rawText2 = products.data.choices[0].text;
 
-  res.status(200).json({result:{ q1:q1, q2:q2, q3:q3 , q4:rawText2}});
+  const p1 = rawText2.split("1.")[1].split("2.")[0];
+  const p2 = rawText2.split("2.")[1].split("3.")[0];
+  const p3 = rawText2.split("3.")[1].split("4.")[0];
+
+  res.status(200).json({result:{ q1:q1, q2:q2, q3:q3 , p1:p1, p2:p2, p3:p3}});
 
 }
 
@@ -58,11 +62,11 @@ function generatePrompt2(morning, commute, friends) {
 
 3. I like to participate in OpenAI hackathons with friends.
 
-For your morning activities consider using this product: Dr Best Greenclean toothbrush.
+1. For your morning activities consider using this product: Dr Best Greenclean toothbrush
 
-For your work/school activities consider using this product: Tesla Model S.
+2. For your work/school activities consider using this product: Tesla Model S because it is an electric car and pollutes less
 
-For you activites with friends, consider using this product:The MacBook Air is a carbon neutral computer.
+3. For you activites with friends, consider using this product: The MacBook Air, as it is a carbon neutral computer.
 
 
 1. The first thing I do in the morning is to select the clothes I will use, then I dress up.
@@ -71,11 +75,11 @@ For you activites with friends, consider using this product:The MacBook Air is a
 
 3. I like to drink a beer with friends.
 
-For your morning activities consider using this product: Clothing company, Patagonia, is always on the top of eco-friendly.
+1. For your morning activities consider using this product: Patagonia is an eco-friendly clothing company to buy clothes
 
-For your work/school activities consider using this product: Allbirds running shoes, Allbirds is already a 100% carbon neutral business.
+2. For your work/school activities consider using this product: Allbirds running shoes, Allbirds is already a 100% carbon neutral business.
 
-For you activites with friends, consider using this product: New Belgium Brewing Company is the fourth-largest craft brewery in the US and has been committed to being eco-friendly since its founding in 1991.
+3. For you activites with friends, consider using this product: New Belgium Brewing Company is the fourth-largest craft brewery in the US and has been committed to being eco-friendly since its founding in 1991.
 
 
 1.${morning}\n\n

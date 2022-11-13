@@ -92,6 +92,9 @@ export default function Home() {
         </div>
 
         <div className={styles.result} style={{display: result ? "initial" : "none"}}>
+
+        <p className={styles.inputLabel}>After climate change...</p>
+
           <div>
             <p style={{fontWeight:"lighter"}}>{morningRoutineInput} becomes...</p>
             <p>{result?.q1}</p>
@@ -106,11 +109,12 @@ export default function Home() {
             <p style={{fontWeight:"lighter"}}>{friendsRoutineInput} becomes...</p>
             <p>{result?.q3}</p>
           </div>
-
+          <br></br>
           <div>
-            <br></br>
-            <p style={{fontWeight:"lighter"}}>It doesn't have to be like this... if in the future you need to replace the products you use during these activities then consider selecting these sustainable products instead:</p>
-            <p>{result?.q4}</p>
+            <p className={styles.inputLabel}>But it doesn't have to be like this. Next time you go about your day, consider these eco-friendly products instead...</p>
+            <p>{result?.p1}</p>
+            <p>{result?.p2}</p>
+            <p>{result?.p3}</p>
           </div>
 
           <div style={{display:"flex"}}>
