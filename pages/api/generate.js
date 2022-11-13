@@ -46,9 +46,26 @@ export default async function (req, res) {
 
 // Function related to how your daily routine would be altered by climate change
 function generatePrompt(morning, commute, friends) {
-  return `As a numbered list, rewrite and expand upon the following sentences after the temperature rises and the ice caps melt as a grave consequence of climate change and global warming:\n\n1.${morning}\n\n2.${commute}\n\n3.${friends}`;
-}
+  return `Rewrite and expand the following paragraphs after the temperature raises as a grave consequence of climate change and global warming:
 
+  1. First thing I do in the morning is some yoga. 
+
+  2. I go to the school riding my bicyle. 
+  
+  3. I like to play videogames with friends. 
+
+  1. With the temperature rising as a result of climate change, the first thing I do in the morning is some yoga to try and stay calm.
+
+  2. I go to school riding my bicycle, trying to do my part to reduce emissions.
+  
+  3. I like to play videogames with friends, but it's hard to enjoy myself when I know the world is in such dire straits.
+  
+  1.${morning}
+  
+  2.${commute}
+  
+  3.${friends}`;
+}
 // Function related to sustainable products
 function generatePrompt2(morning, commute, friends) {
   return `Identify the category for each of the following activities and suggest a brand and model of a sustainable product for that category.
