@@ -54,6 +54,8 @@ function generatePrompt(morning, commute, friends) {
   
   3. I like to play videogames with friends. 
 
+  becomes
+
   1. With the temperature rising as a result of climate change, the first thing I do in the morning is some yoga to try and stay calm.
 
   2. I go to school riding my bicycle, trying to do my part to reduce emissions.
@@ -64,7 +66,11 @@ function generatePrompt(morning, commute, friends) {
   
   2.${commute}
   
-  3.${friends}`;
+  3.${friends}
+  
+  becomes
+  
+  `;
 }
 // Function related to sustainable products
 function generatePrompt2(morning, commute, friends) {
