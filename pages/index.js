@@ -107,11 +107,16 @@ export default function Home() {
             <p>{result?.q3}</p>
           </div>
 
+          <div>
+            <br></br>
+            <p style={{fontWeight:"lighter"}}>It doesn't have to be like this... consider using these products:</p>
+            <p>{result?.q4}</p>
+          </div>
+
           <div style={{display:"flex"}}>
             <a style={{margin:"auto", color:"#10a37f", marginTop:"10px"}} href="./">Try Again</a>
           </div>
         </div>
-
       </main>
     </div>
   );
